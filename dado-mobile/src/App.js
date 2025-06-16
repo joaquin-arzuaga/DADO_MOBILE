@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, } from 'react-native';
 
-const diceImages = {
-  1: '⚀',
-  2: '⚁',
-  3: '⚂',
-  4: '⚃',
-  5: '⚄',
-  6: '⚅',
-};
+const diceImages = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅', ];
 
 export default function App() {
   const [diceNumber, setDiceNumber] = useState(1);
