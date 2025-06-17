@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions, } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Pressable, } from 'react-native';
 
-const diceImages = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅', ];
+const diceImages = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
 
 export default function App() {
   const [diceNumber, setDiceNumber] = useState(1);
 
   const roll = () => {
-    const randomNum = Math.floor(Math.random() * 6) + 1;
+    const randomNum = Math.floor(Math.random() * 6);
     setDiceNumber(randomNum);
   };
 
@@ -17,14 +17,14 @@ export default function App() {
 
   return (
 
-    <TouchableOpacity style={styles.container} onPress={roll}>
+    <Pressable style={styles.container} onPress={roll}>
       <Text style={[styles.text, { fontSize: textFontSize }]}>
         ¡Toca el dado!
       </Text>
       <Text style={[styles.diceImage, { fontSize: diceFontSize }]}>
         {diceImages[diceNumber]}
       </Text>
-    </TouchableOpacity>
+    </Pressable>
 
   );
 }
